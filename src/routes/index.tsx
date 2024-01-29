@@ -1,5 +1,5 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
 import { invoke } from '@tauri-apps/api/tauri'
 
 export default component$(() => {
@@ -18,6 +18,7 @@ export default component$(() => {
       </p>
       <button onClick$={() => greet(new Date().toTimeString())}>{greetMsg.value}</button>
 
+      <Link href="/react">React</Link>
     </>
   );
 });

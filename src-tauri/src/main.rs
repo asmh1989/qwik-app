@@ -1,5 +1,8 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+#![allow(dead_code)]
+
+mod config;
 
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -7,6 +10,7 @@ fn greet(name: &str) -> String {
 }
 
 fn main() {
+    crate::config::init_config();
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())

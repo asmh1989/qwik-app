@@ -27,7 +27,9 @@
     "qwik": "qwik"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.5.3"
+    "@tauri-apps/api": "^1.5.3",
+    "@mui/material": "^5.13.0",
+    "@mui/x-data-grid": "^6.4.0"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.4.2",
@@ -35,8 +37,6 @@
     "@builder.io/qwik-react": "0.5.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.13.0",
-    "@mui/x-data-grid": "^6.4.0",
     "@tauri-apps/cli": "^1.5.9",
     "@types/eslint": "^8.56.2",
     "@types/node": "^20.11.6",

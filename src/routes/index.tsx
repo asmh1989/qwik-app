@@ -1,6 +1,8 @@
 import { component$, useSignal, $ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 import { invoke } from '@tauri-apps/api/tauri'
+
+import { LoginPage } from "~/integrations/react/login";
 
 export default component$(() => {
   const greetMsg = useSignal('')
@@ -10,25 +12,8 @@ export default component$(() => {
   })
   return (
     <>
-      <h1>Hi 👋</h1>
-      <p>
-        Can't wait to see what you build with qwik!
-        <br />
-        Happy coding ....
-      </p>
-      <button onClick$={() => greet(new Date().toTimeString())}>{greetMsg.value}</button>
-
-      <Link href="/react">React</Link>
+      <LoginPage />
     </>
   );
 });
 
-export const head: DocumentHead = {
-  title: "Welcome to Qwik",
-  meta: [
-    {
-      name: "description",
-      content: "Qwik site description",
-    },
-  ],
-};
